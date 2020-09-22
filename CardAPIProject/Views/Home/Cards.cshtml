@@ -1,0 +1,20 @@
+﻿@model Cards
+@{
+    ViewData["Title"] = "Cards";
+}
+
+<h1>Cards for @Model.deck_id</h1>
+<h3>Cards remaining in deck: @Model.remaining</h3>
+<form action="/Home/Cards">
+    <input type="hidden" name="deck_id" value="@Model.deck_id" />
+    <input type="submit" value="Draw Again" />
+</form>
+<form action="/Home/Cards">
+    <input type="submit" value="New Deck" />
+</form>
+@foreach (SingleCard card in @Model.cards)
+{
+    <h2>@card.value of @card.suit</h2>
+    <img src="@card.image" />
+}
+
