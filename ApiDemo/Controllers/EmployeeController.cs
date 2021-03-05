@@ -56,6 +56,13 @@ namespace ApiDemo.Controllers
             return emp1;
         }
 
+        [HttpGet("empty")]
+        public Object empty()
+        {
+            Employee emp1 = new Employee() { Userid = "hello", Department = "IT", Name = "Fred Smith" };
+            return emp1;
+        }
+
         // The JSON for a list that has nothing in it is
         //    []
         // The JSON for an empty object is
